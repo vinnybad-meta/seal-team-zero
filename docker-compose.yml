@@ -1,0 +1,10 @@
+services:
+  app-runner:
+    build:
+      context: .
+      dockerfile: environment/Dockerfile
+    working_dir: /workspace
+    init: true
+    command: ["bash", "-lc", "node scripts/serve.js"]
+    ports:
+      - "3000"
