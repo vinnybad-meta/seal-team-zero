@@ -1,0 +1,7 @@
+[app]
+start = "node scripts/serve.js"
+port = 3000
+health = "/"
+
+[app.production]
+start = "node scripts/serve.js"
