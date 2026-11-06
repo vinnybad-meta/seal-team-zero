@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Seal Team Zero — Abbottabad Night Raid</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+  }
+}
+</script>
+</head>
+<body>
+<div id="err"></div>
+<div id="hud">
+  <div id="topbar">
+    <div id="compass"><canvas id="compassCv" width="360" height="28"></canvas></div>
+    <div id="clock">01:00:00</div>
+  </div>
+  <div id="objectives"></div>
+  <div id="banner"></div>
+  <div id="subtitle"></div>
+  <div id="crosshair"><div class="ch-dot"></div><div id="targetId"></div><div id="hitmarker">✕</div></div>
+  <div id="dmgDir"></div>
+  <div id="vignette"></div>
+  <div id="nvgGrade"></div>
+  <div id="bottomLeft">
+    <div id="healthWrap"><div id="healthBar"></div><span id="healthTxt">100</span></div>
+    <div id="squadStatus"></div>
+  </div>
+  <div id="bottomRight">
+    <div id="weaponName">HK416</div>
+    <div id="ammo">30 / 120</div>
+    <div id="gear">CHG 3 · FRAG 2</div>
+    <div id="nvgTag">NVG OFF</div>
+  </div>
+  <canvas id="minimap" width="180" height="180"></canvas>
+  <div id="interactHint"></div>
+  <div id="touchUI">
+    <div id="stick"><div id="stickKnob"></div></div>
+    <button id="fireBtn">FIRE</button>
+  </div>
+</div>
+<div id="startScreen">
+  <h1>SEAL TEAM ZERO</h1>
+  <p class="sub">Abbottabad — May 2, 2011 · 01:00 · Moonless</p>
+  <p class="brief">You are the stack lead of a 4-operator element with war dog CAIRO. Breach the compound, clear the guest house and main house, neutralize GERONIMO, collect intel, demolish the wreck, and exfil with RAZOR-2.</p>
+  <div class="controls">
+    <span>Click — pointer lock</span><span>Mouse — look</span><span>WASD / Arrows — move</span>
+    <span>Click — fire</span><span>Right mouse — ADS</span><span>R — reload</span>
+    <span>1/2/3 — HK416 / MP7 / P226</span><span>E — interact (plant / collect / open)</span>
+    <span>N — night vision</span><span>F — flashlight</span><span>G — frag</span><span>Shift — sprint (no firing)</span>
+  </div>
+  <button id="startBtn">BEGIN INSERTION</button>
+  <p class="roe">ROE: armed hostiles only. Unarmed civilians are protected — killing one fails the mission.</p>
+</div>
+<div id="pauseOverlay" class="overlay hidden">
+  <h2>PAUSED</h2><p>Pointer lock lost. Simulation frozen.</p>
+  <button id="resumeBtn">RESUME</button>
+</div>
+<div id="failOverlay" class="overlay hidden">
+  <h2>MISSION FAILED</h2><p id="failReason"></p>
+  <button id="failRestartBtn">RESTART MISSION</button>
+</div>
+<div id="aarOverlay" class="overlay hidden">
+  <h2>AFTER-ACTION REPORT</h2>
+  <div id="aarBody"></div>
+  <button id="aarRestartBtn">PLAY AGAIN</button>
+</div>
+<script type="module" src="game.js"></script>
+</body>
+</html>

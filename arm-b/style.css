@@ -1,0 +1,48 @@
+html,body{margin:0;padding:0;overflow:hidden;background:#05070d;font-family:system-ui,-apple-system,sans-serif;touch-action:none;user-select:none;-webkit-user-select:none}
+canvas{display:block}
+#err{display:none;position:fixed;top:8px;left:8px;right:8px;padding:8px 12px;background:#b3261e;color:#fff;font-size:14px;border-radius:6px;z-index:99}
+#hud{position:fixed;inset:0;pointer-events:none;z-index:5;color:#cfe3c2;font-size:14px;text-shadow:0 1px 3px rgba(0,0,0,.9)}
+#nvgOverlay{display:none;position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(90,255,140,.28) 0%,rgba(20,120,50,.45) 70%,rgba(0,40,10,.85) 100%);mix-blend-mode:screen}
+#nvgOverlay.whiteout{background:radial-gradient(ellipse at center,rgba(230,255,230,.92),rgba(160,255,170,.95))}
+#nvgNoise{position:absolute;inset:0;opacity:.35;background-image:repeating-conic-gradient(#9f9 0 .0001turn,#000 0.0002turn);background-size:7px 7px;animation:noiseShift .12s steps(2) infinite}
+@keyframes noiseShift{from{transform:translate(0,0)}to{transform:translate(-3px,2px)}}
+#dmgVignette{position:absolute;inset:0;opacity:0;background:radial-gradient(ellipse at center,transparent 55%,rgba(200,0,0,.75) 100%);transition:opacity .15s}
+#compass{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:340px;text-align:center;background:rgba(0,10,0,.55);border:1px solid #3a5;border-radius:4px;padding:2px;overflow:hidden;white-space:nowrap}
+#compassNeedle{color:#ffd75e}
+#objectivePanel{position:absolute;top:8px;left:8px;width:250px;background:rgba(0,10,0,.62);border:1px solid #3a5;border-radius:4px;padding:6px 8px;font-size:12px}
+#objectivePanel ul{margin:4px 0;padding-left:16px}
+#objectivePanel li.done{color:#7fdc7f;text-decoration:line-through}
+#objectivePanel li.current{color:#ffd75e;font-weight:700}
+#objCurrent{color:#ffd75e;margin-top:4px}
+#minimapWrap{position:absolute;top:8px;right:8px;background:rgba(0,10,0,.62);border:1px solid #3a5;border-radius:4px;padding:4px;text-align:center;font-size:10px}
+#timer{position:absolute;top:190px;right:14px;font-size:20px;color:#ffd75e}
+#healthWrap{position:absolute;left:12px;bottom:12px;width:220px}
+#healthBar{height:12px;background:#222;border:1px solid #5a5}
+#healthFill{height:100%;width:100%;background:#4caf50}
+#ammoWrap{position:absolute;right:12px;bottom:12px;text-align:right}
+#weaponName{font-size:18px;color:#ffd75e}
+#ammoText{font-size:26px}
+#crosshair{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:22px;color:#eaffea}
+#hitmarker{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:28px;color:#fff;opacity:0}
+#targetId{position:absolute;left:50%;top:54%;transform:translateX(-50%);color:#7fb7ff;font-weight:700}
+#dmgDir{position:absolute;left:50%;top:42%;transform:translateX(-50%);font-size:28px;color:#ff4444;opacity:0}
+#banner{position:absolute;left:50%;top:22%;transform:translateX(-50%);font-size:26px;color:#ffd75e;font-weight:800;text-align:center}
+#callout{position:absolute;left:50%;bottom:22%;transform:translateX(-50%);font-size:17px;color:#bfe3ff;text-align:center;max-width:80%}
+#hint{position:absolute;left:50%;bottom:16%;transform:translateX(-50%);font-size:15px;color:#ffe9a8;text-align:center}
+#blastWarn{position:absolute;left:50%;bottom:30%;transform:translateX(-50%);font-size:18px;color:#ff6666;font-weight:800}
+.overlay{position:fixed;inset:0;z-index:20;display:flex;align-items:center;justify-content:center;background:rgba(2,6,3,.82);color:#d6e8c8;overflow:auto}
+.overlay.hidden{display:none}
+.panel{max-width:720px;width:92%;background:#0a140c;border:1px solid #3a5;border-radius:8px;padding:18px;margin:12px}
+.panel h1{color:#ffd75e;margin:4px 0}
+.panel button{pointer-events:auto;background:#2e5d33;color:#fff;border:1px solid #7fdc7f;padding:12px 22px;font-size:17px;border-radius:5px;cursor:pointer}
+.controls{display:grid;grid-template-columns:1fr 1fr;gap:4px 14px;font-size:13px;margin:10px 0}
+.roe{color:#ffb3ab}
+#aarText{white-space:pre-wrap;font-size:15px;color:#d6e8c8}
+#touchUI{position:fixed;inset:0;z-index:6;pointer-events:none}
+#touchUI.hidden{display:none}
+#stick{position:absolute;left:18px;bottom:70px;width:110px;height:110px;border:2px solid rgba(200,255,200,.5);border-radius:50%;pointer-events:none}
+#stickKnob{position:absolute;left:35px;top:35px;width:40px;height:40px;background:rgba(200,255,200,.4);border-radius:50%}
+#fireBtn{position:absolute;right:22px;bottom:80px;width:84px;height:84px;border-radius:50%;background:rgba(180,40,40,.55);color:#fff;pointer-events:auto}
+#touchE{position:absolute;right:120px;bottom:60px;pointer-events:auto}
+#touchNVG{position:absolute;right:120px;bottom:100px;pointer-events:auto}
+@media (max-width:700px){#objectivePanel{width:180px;font-size:10px}#minimapWrap{transform:scale(.75);transform-origin:top right}#compass{width:220px}}

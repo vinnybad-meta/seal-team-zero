@@ -1,0 +1,54 @@
+html, body { margin:0; padding:0; overflow:hidden; background:#05070d; font-family:ui-monospace, Menlo, Consolas, monospace; touch-action:none; user-select:none; -webkit-user-select:none; }
+canvas { display:block; }
+#err { display:none; position:fixed; top:8px; left:8px; right:8px; padding:8px 12px; background:#b3261e; color:#fff; font-size:14px; border-radius:6px; z-index:60; }
+#hud { position:fixed; inset:0; pointer-events:none; z-index:5; color:#cfe3c2; text-shadow:0 1px 3px rgba(0,0,0,.9); }
+#topbar { position:absolute; top:10px; left:50%; transform:translateX(-50%); text-align:center; }
+#compassCv { background:rgba(3,8,4,.55); border:1px solid rgba(160,220,160,.35); border-radius:4px; width:min(360px,52vw); height:auto; }
+#clock { margin-top:4px; font-size:15px; letter-spacing:2px; color:#9fe8a8; }
+#objectives { position:absolute; top:10px; left:10px; background:rgba(3,10,5,.62); border:1px solid rgba(150,220,150,.3); border-radius:6px; padding:8px 10px; font-size:12.5px; line-height:1.55; max-width:300px; }
+#objectives .obj-done { color:#8fce8f; text-decoration:line-through; opacity:.9; }
+#objectives .obj-active { color:#ffd76a; font-weight:700; }
+#banner { position:absolute; top:22%; left:50%; transform:translateX(-50%); font-size:26px; font-weight:800; letter-spacing:3px; color:#ffd76a; opacity:0; transition:opacity .3s; text-align:center; white-space:nowrap; }
+#subtitle { position:absolute; bottom:19%; left:50%; transform:translateX(-50%); font-size:16px; color:#bfffc4; background:rgba(0,0,0,.45); padding:4px 14px; border-radius:4px; opacity:0; transition:opacity .2s; white-space:nowrap; }
+#crosshair { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); text-align:center; }
+.ch-dot { width:5px; height:5px; margin:0 auto; border-radius:50%; background:rgba(220,255,220,.9); box-shadow:0 0 4px #000; }
+#targetId { margin-top:14px; font-size:13px; color:#7fd4ff; min-height:16px; }
+#hitmarker { font-size:22px; color:#fff; opacity:0; margin-top:-30px; }
+#dmgDir { position:absolute; left:50%; top:44%; width:0; height:0; }
+#vignette { position:absolute; inset:0; pointer-events:none; opacity:0; background:radial-gradient(ellipse at center, transparent 52%, rgba(200,0,0,.55) 100%); }
+#nvgGrade { position:absolute; inset:0; pointer-events:none; opacity:0; background:radial-gradient(ellipse at center, rgba(90,255,130,.10) 40%, rgba(10,60,20,.38) 100%); mix-blend-mode:screen; }
+#bottomLeft { position:absolute; left:12px; bottom:12px; }
+#healthWrap { width:190px; height:20px; border:1px solid rgba(170,255,170,.5); background:rgba(0,0,0,.55); position:relative; }
+#healthBar { height:100%; width:100%; background:linear-gradient(90deg,#2f9e44,#69db7c); }
+#healthTxt { position:absolute; right:6px; top:1px; font-size:13px; color:#eaffea; }
+#squadStatus { margin-top:6px; font-size:12px; line-height:1.5; color:#a8e6a1; }
+#bottomRight { position:absolute; right:12px; bottom:12px; text-align:right; }
+#weaponName { font-size:15px; color:#ffe9a8; letter-spacing:1px; }
+#ammo { font-size:30px; font-weight:800; color:#fff; }
+#gear { font-size:13px; color:#9fe8a8; }
+#nvgTag { font-size:12px; color:#69db7c; letter-spacing:1px; }
+#minimap { position:absolute; right:12px; top:10px; background:rgba(2,8,3,.72); border:1px solid rgba(150,255,170,.4); border-radius:6px; }
+#interactHint { position:absolute; left:50%; bottom:26%; transform:translateX(-50%); font-size:15px; color:#ffe9a8; background:rgba(0,0,0,.5); padding:5px 14px; border-radius:4px; display:none; }
+#touchUI { display:none; }
+#stick { position:absolute; left:26px; bottom:90px; width:110px; height:110px; border-radius:50%; border:2px solid rgba(255,255,255,.4); background:rgba(255,255,255,.08); pointer-events:none; }
+#stickKnob { position:absolute; left:35px; top:35px; width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,.45); }
+#fireBtn { position:absolute; right:30px; bottom:110px; width:84px; height:84px; border-radius:50%; background:rgba(220,60,40,.55); color:#fff; border:2px solid rgba(255,255,255,.5); font-size:16px; pointer-events:auto; }
+.overlay { position:fixed; inset:0; z-index:40; background:rgba(2,4,8,.95); color:#d8f5d0; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:20px; }
+.overlay.hidden { display:none; }
+.overlay h2 { letter-spacing:4px; color:#ffd76a; }
+.overlay button, #startBtn { pointer-events:auto; cursor:pointer; background:#1d3a1d; color:#c9f7c0; border:1px solid #69db7c; padding:12px 28px; font-size:17px; letter-spacing:2px; border-radius:6px; margin-top:16px; font-family:inherit; }
+.overlay button:hover, #startBtn:hover { background:#2b552b; }
+#startScreen { position:fixed; inset:0; z-index:30; background:radial-gradient(ellipse at 50% 35%, rgba(11,22,38,.86) 0%, rgba(5,7,13,.93) 70%); color:#d8f5d0; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:18px; overflow:auto; }
+#startScreen h1 { font-size:42px; letter-spacing:8px; color:#e8ffe2; margin:6px 0; text-shadow:0 0 24px rgba(80,255,140,.35); }
+#startScreen .sub { color:#8fd0ff; letter-spacing:2px; margin:2px 0; }
+#startScreen .brief { max-width:640px; line-height:1.55; color:#b9d9b2; }
+.controls { display:flex; flex-wrap:wrap; gap:7px; justify-content:center; max-width:760px; margin:10px 0; }
+.controls span { background:rgba(20,40,22,.8); border:1px solid rgba(140,255,160,.35); border-radius:4px; padding:5px 10px; font-size:12.5px; }
+.roe { color:#ffb3a8; font-size:13px; }
+#aarBody { font-size:16px; line-height:1.9; background:rgba(10,25,12,.7); border:1px solid rgba(150,255,170,.35); border-radius:8px; padding:16px 34px; }
+@media (max-width:760px) {
+  #objectives { font-size:10.5px; max-width:180px; }
+  #minimap { width:110px; height:110px; }
+  #banner { font-size:18px; }
+  #startScreen h1 { font-size:26px; letter-spacing:4px; }
+}

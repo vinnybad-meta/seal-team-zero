@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Seal Team Zero — Abbottabad Night Raid</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{ "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
+</script>
+</head>
+<body>
+<div id="err"></div>
+<div id="hud">
+  <div id="nvgOverlay"><div id="nvgNoise"></div></div>
+  <div id="dmgVignette"></div>
+  <div id="compass"><span id="compassTape">N ····· NE ····· E ····· SE ····· S ····· SW ····· W ····· NW ····· N</span><div id="compassNeedle">▲</div></div>
+  <div id="objectivePanel"><div id="objTitle">OBJECTIVES — SEAL TEAM ZERO</div><ul id="objList"></ul><div id="objCurrent"></div></div>
+  <div id="minimapWrap"><canvas id="minimap" width="180" height="150"></canvas><div id="minimapLabel">TACTICAL — N ↑</div></div>
+  <div id="timer">00:00</div>
+  <div id="healthWrap"><div id="callsign">ZERO-1 (YOU)</div><div id="healthBar"><div id="healthFill"></div></div><div id="healthText">100</div><div id="squadStatus"></div></div>
+  <div id="ammoWrap"><div id="weaponName">HK416</div><div id="ammoText">30 / 120</div><div id="equipText">Charges 3 · Frags 2</div><div id="nvgText">NVG OFF · LIGHT OFF</div></div>
+  <div id="crosshair">+</div>
+  <div id="hitmarker">×</div>
+  <div id="targetId"></div>
+  <div id="dmgDir">▲</div>
+  <div id="banner"></div>
+  <div id="callout"></div>
+  <div id="hint"></div>
+  <div id="blastWarn"></div>
+</div>
+<div id="startScreen" class="overlay">
+  <div class="panel">
+    <h1>SEAL TEAM ZERO</h1>
+    <h2>Abbottabad — 01:00, 2 May 2011 · Moonless</h2>
+    <p>You are ZERO-1, stack lead of a fictional 4-operator element with CAIRO the war dog. Two stealth Black Hawks cross overhead; RAZOR-1 clips the 12-ft wall and hard-lands in the courtyard. Fast-rope in, breach, clear guest house and main house, neutralize GERONIMO, conduct SSE, destroy the wreck, exfil to RAZOR-2.</p>
+    <p class="roe">ROE: armed hostiles only. Unarmed civilians (light clothing, no weapon, cowering) are protected — killing one fails the mission. Friendlies are immune to your fire (“Check fire!”).</p>
+    <div class="controls">
+      <div>Click canvas: pointer lock · Mouse: look</div><div>WASD / arrows: move · Shift: sprint (no firing)</div>
+      <div>Click: fire · Right mouse: ADS</div><div>R: reload · 1/2/3: HK416 / MP7 / P226</div>
+      <div>E: interact (plant charge, collect intel, open, cache)</div><div>N: night vision · F: flashlight · G: frag grenade</div>
+      <div>Touch: left stick moves, right-half drag looks, FIRE button fires</div>
+    </div>
+    <button id="startBtn">START MISSION</button>
+    <div id="seedLine"></div>
+  </div>
+</div>
+<div id="pauseScreen" class="overlay hidden"><div class="panel"><h1>PAUSED</h1><p>Pointer lock lost. Simulation, timer, AI and damage are frozen.</p><button id="resumeBtn">RESUME</button></div></div>
+<div id="failScreen" class="overlay hidden"><div class="panel"><h1>MISSION FAILED</h1><p id="failReason"></p><button id="failRestartBtn">RESTART MISSION</button></div></div>
+<div id="aarScreen" class="overlay hidden"><div class="panel"><h1>AFTER-ACTION REPORT</h1><pre id="aarText"></pre><button id="aarRestartBtn">PLAY AGAIN</button></div></div>
+<div id="touchUI" class="hidden">
+  <div id="stick"><div id="stickKnob"></div></div>
+  <button id="fireBtn">FIRE</button>
+  <button id="touchE">E</button><button id="touchNVG">NVG</button>
+</div>
+<script type="module" src="game.js"></script>
+</body>
+</html>
