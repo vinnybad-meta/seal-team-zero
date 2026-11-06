@@ -1,2 +1,19 @@
 [site]
 name = "seal-team-zero"
+description = "Seal Team Zero: single-player three.js night-raid FPS reenacting the Abbottabad compound raid. Two playable builds (Arm A modular, Arm B nav-AI) behind one landing page."
+category = "webcraft-2.0"
+
+[site.tech]
+stack = ["HTML", "CSS", "JavaScript"]
+hosting = "aws"
+hosting_access_granted = true
+
+[task]
+track_assignment = "hatch-web-design"
+workstream = "web_craft"
+format = "web_craft"
+
+[[screenshots]]
+route = "/"
+file = "screenshots/home-desktop.png"
+device = "desktop"

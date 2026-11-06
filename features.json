@@ -1,0 +1,41 @@
+{
+  "site": "seal-team-zero",
+  "rubrics": [
+    {
+      "id": 1,
+      "criterion": "The landing page presents both Arm A and Arm B builds with distinct entries and launches each game in place.",
+      "type": "CUJ",
+      "priority": "must-have"
+    },
+    {
+      "id": 2,
+      "criterion": "Each game opens at night outside compound walls, plays the flyover and crash sequence, and reaches controllable play with no console errors.",
+      "type": "CUJ",
+      "priority": "must-have"
+    },
+    {
+      "id": 3,
+      "criterion": "The player moves, aims, fires all three weapons, reloads, plants breaching charges, throws frags, and toggles night vision and flashlight.",
+      "type": "CUJ",
+      "priority": "must-have"
+    },
+    {
+      "id": 4,
+      "criterion": "Objectives O1-O9 advance in order (breach, guest house, floors, HVT with callouts, intel, demolition, exfil) ending on an after-action report with time, accuracy, and grade.",
+      "type": "CUJ",
+      "priority": "must-have"
+    },
+    {
+      "id": 5,
+      "criterion": "Killing a civilian or dying fails the mission with a named overlay, and restart restores the starting state.",
+      "type": "CUJ",
+      "priority": "must-have"
+    },
+    {
+      "id": 6,
+      "criterion": "The HUD (objectives checklist, compass, health, ammo, timer, minimap) stays readable on desktop and mobile-portrait viewports.",
+      "type": "design",
+      "priority": "must-have"
+    }
+  ]
+}
