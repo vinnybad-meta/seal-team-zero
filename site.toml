@@ -1,5 +1,6 @@
 [site]
 name = "seal-team-zero"
+original_url = "https://github.com/vinnybad-meta/seal-team-zero"
 description = "Seal Team Zero: single-player three.js night-raid FPS reenacting the Abbottabad compound raid. Two playable builds (Arm A modular, Arm B nav-AI) behind one landing page."
 category = "webcraft-2.0"
 

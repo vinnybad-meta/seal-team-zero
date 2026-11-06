@@ -27,14 +27,8 @@
     },
     {
       "id": 5,
-      "criterion": "Killing a civilian or dying fails the mission with a named overlay, and restart restores the starting state.",
+      "criterion": "Killing a civilian or dying fails the mission with a named overlay, restart restores the starting state, and the HUD (objectives checklist, compass, health, ammo, timer, minimap) stays readable on desktop and mobile-portrait viewports.",
       "type": "CUJ",
-      "priority": "must-have"
-    },
-    {
-      "id": 6,
-      "criterion": "The HUD (objectives checklist, compass, health, ammo, timer, minimap) stays readable on desktop and mobile-portrait viewports.",
-      "type": "design",
       "priority": "must-have"
     }
   ]
